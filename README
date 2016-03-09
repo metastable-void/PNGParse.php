@@ -1,0 +1,4 @@
+License GNU GPLv3 or later
+
+Dump PNG chunks as JSON:
+$ ./parse.php < path/to/any.png
