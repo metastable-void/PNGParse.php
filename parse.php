@@ -45,6 +45,7 @@ while (!feof($stream)) {
 		throw new Exception("I/O error");
 	}
 	
+	$origLength = $length;
 	$data = '';
 	while ($length > 0) {
 		$read = fread($stream, $length);
@@ -62,7 +63,7 @@ while (!feof($stream)) {
 	echo json_encode(array(
 		'type' => $type
 		, 'position' => $pos
-		, 'length' => $length
+		, 'length' => $origLength
 		, 'data' => bin2hex($data)
 	));
 	
